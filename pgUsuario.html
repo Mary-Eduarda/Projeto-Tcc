@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seja bem-vindo</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seja bem-vindo</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Olá usuária(o)!</h1>
-        <p>Adicione seu TCC!</p>
-        <textarea name="user_tcc" rows="3" cols="30"
-        input type="text" id="usuario" placeholder="Adicione seu TCC"></textarea> <!--aqui o usuario pode adicionar seu texto, com várias linhas!-->
 
-        <button onclick="adicionarTcc()">Adicionar Tcc!</button>
-        <button onclick="verifeAlertar()" class="botao_limpar">Limpar Tudo</button>
-        <p id="mensagem"></p>
-      </div>
-    
-      <script src="script.js"></script>
+<div class="container">
+    <h1>Olá usuária(o)!</h1>
+    <p>Escreva seu Tcc </p>
+    <textarea name="user_tcc" rows="3" cols="30" id="enviarTcc" placeholder="Adicione seu TCC"></textarea> <button onclick="enviarTcc()">Enviar Tcc!</button>
+<div id="mensgagem"></div> </div>
+
+
+<script src="script.js"></script>
 </body>
 </html>
+ 
