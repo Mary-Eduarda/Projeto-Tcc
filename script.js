@@ -1,16 +1,15 @@
-// colocar nome da pessoa no email, ex: "TCC DE PAULA, ENVIADO COM SUCESSO!" (automaticamente paara email do adm) cadstrada no banco de dados
+//(automaticamente para email do adm)
 
 function enviarTcc() {
     const inputEnviarTcc = document.getElementById("enviarTcc");
-    let tcc = inputEnviarTcc.value.trim();
+    let tcc = inputEnviarTcc.value.trim(); // Obtendo o valor do input e removendo espaços em branco
     const mensagemElemento = document.getElementById("mensgagem");
   
     // Verificando se o usuário adicionou algo
     if (tcc === "") {
-      let mensagemErro = "Digite seu TCC para poder envia-lo!";
-      mensagemElemento.textContent = mensagemErro;
-      return;
-    } else {
-      mensagemElemento.textContent = "Seu TCC foi enviado com sucesso!";
+      alert("Digite em todos os campos, para que seu TCC seja enviado!");
+      return false;}
+       else {
+      alert("Seu TCC foi enviado com sucesso!");
     }
   }
