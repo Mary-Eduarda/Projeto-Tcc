@@ -9,9 +9,19 @@
 <body>
 
 <div class="container">
-    <h1>Olá usuária(o)!</h1>
-    <p>Escreva seu Tcc </p>
-    <textarea name="user_tcc" rows="3" cols="30" id="enviarTcc" placeholder="Adicione seu TCC"></textarea> <button onclick="enviarTcc()">Enviar Tcc!</button>
+    <h1>Olá usuária(o)! Coloque seu nome e escreva seu TCC, nos campos indicados.</h1>
+    
+    <p>Nome:</p>        
+    <textarea rows="3" cols="30" placeholder="Nome Completo" input type="text" id="enviarTcc"  rows="3" cols="30" required></textarea>
+    <br><!--Required: obrigatório-->
+
+    <p>Título:</p>
+   <textarea rows="3" cols="30" placeholder="Título" input type="text" id="enviarTcc"  rows="3" cols="30" required></textarea>
+    <br>
+
+    <p>Escreva seu Tcc: </p>
+    <textarea name="nomeUser" rows="3" cols="30" id="enviarTcc" placeholder="Adicione seu TCC" required></textarea> <!--Campo para escrever texto TCC-->
+    <button type="submit" name="enviarTcc()">Enviar Tcc!</button>
 <div id="mensgagem"></div> </div>
 
 
