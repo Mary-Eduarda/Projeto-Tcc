@@ -9,7 +9,7 @@
 <body>
 
 <div class="container">
-    <h1>Olá usuária(o)! Coloque seu nome e escreva nos campos indicados.</h1>
+    <h1>Olá usuária(o)! Escreva nos campos indicados.</h1>
     
     <p>Nome:</p>         
     <textarea rows="3" cols="30" placeholder="Nome Completo" id="nome" required></textarea>
@@ -27,5 +27,14 @@
 </div>
 
 <script src="script.js"></script>
+
+<!---adicionando emailJs--->
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script type="text/javascript">
+   (function() {
+      emailjs.init("duda"); // Substitua pelo seu User ID do EmailJS
+   })();
+</script>
+
 </body>
 </html>
