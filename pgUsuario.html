@@ -4,14 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seja bem-vindo</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<link rel="stylesheet" href="stylepgU.css">
 
+<style>/*ESTILO DO CARREGAMENTO*/
+   
+    #loadingIndicator {
+        display: flex; /* Para alinhar o spinner e o texto */
+        align-items: center; /* Alinha verticalmente */
+        gap: 10px; /* Espaço entre o spinner e o texto */
+        color: #007bff; /* Cor azul para o texto de carregamento */
+        margin-top: 10px; /* Espaçamento da mensagem */
+    }
+
+    /* Estilo para o spinner (roda girando) */
+    .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1); /* Borda cinza clara */
+        border-top: 4px solid #007bff; /* Parte superior azul (visível) */
+        border-radius: 50%; /* Torna o elemento circular */
+        width: 20px; /* Largura */
+        height: 20px; /* Altura */
+        animation: spin 1s linear infinite; /* Animação: 1s, linear, infinita */
+    }
+
+    /* Define a animação de giro */
+    @keyframes spin {
+        0% { transform: rotate(0deg); } /* Começa sem rotação */
+        100% { transform: rotate(360deg); } /* Gira 360 graus */
+    }
+</style>
+</head>
+
+<body>
 <div class="container">
     <h1>Olá usuária(o)! Escreva nos campos indicados.</h1>
-    
-    <p>Nome:</p>         
+
+    <p>Nome:</p>
     <textarea rows="3" cols="30" placeholder="Nome Completo" id="nome" required></textarea>
     <br>
 
@@ -23,18 +50,25 @@
     <textarea rows="3" cols="30" id="textotcc" placeholder="Adicione seu TCC" required></textarea>
     <button type="button" id="enviarTcc">Enviar Tcc!</button>
 
-    <div id="mensagem"></div> 
+    <div id="mensagem"></div>
+
+    <div id="loadingIndicator" style="display: none;">
+        <div class="spinner"></div>
+        <span>Enviando TCC... Por favor, aguarde.</span>
+    </div>
+
 </div>
+<!--incluindo (carregando) uma biblioteca JavaScript externa-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+
+        emailjs.init("SHJNZUo6qEtauwODj");
+    })();
+</script>
 
 <script src="script.js"></script>
-
-<!---adicionando emailJs--->
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-<script type="text/javascript">
-   (function() {
-      emailjs.init("duda"); // Substitua pelo seu User ID do EmailJS
-   })();
-</script>
 
 </body>
 </html>
