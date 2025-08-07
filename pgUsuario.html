@@ -38,9 +38,14 @@
 <div class="container">
     <h1>Olá usuária(o)! Escreva nos campos indicados.</h1>
 
+
     <p>Nome:</p>
     <textarea rows="3" cols="30" placeholder="Nome Completo" id="nome" required></textarea>
     <br>
+
+    <p>E-mail:</p>
+     <textarea rows="3" cols="30" placeholder="E-mail" id="email" required></textarea>
+     <br>
 
     <p>Título:</p>
     <textarea rows="3" cols="30" placeholder="Título" id="titulo" required></textarea>
@@ -58,7 +63,8 @@
     </div>
 
 </div>
-<!--incluindo (carregando) uma biblioteca JavaScript externa-->
+
+<!--incluindo uma biblioteca JavaScript externa-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script type="text/javascript">
@@ -66,9 +72,28 @@
 
         emailjs.init("SHJNZUo6qEtauwODj");
     })();
+
+    //2.1 Email do aluno para adm
+   
+                const templateParams = {
+                from_name: nome.value.trim(),
+                to_name: 'Administrador',
+                message_html: `
+                    <h2>Novo TCC Recebido!</h2>
+                    <p><strong>Nome do Aluno:</strong> ${nome.value.trim()}</p>
+                    <p><strong>E-mail do Aluno:</strong> ${email.value.trim()}</p>
+                    <p><strong>Título do TCC:</strong> ${titulo.value.trim()}</p>
+                    <p><strong>Conteúdo do TCC:</strong></p>
+                    <p>${textotcc.value.trim()}</p>
+                `,
+                admin_email: 'yyduds91@gmail.com'
+             };
+
+
+
 </script>
 
-<script src="script.js"></script>
+<script src="pgAdm.js"></script>
 
 </body>
 </html>
